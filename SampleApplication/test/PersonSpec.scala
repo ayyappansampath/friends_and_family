@@ -1,18 +1,21 @@
+import model.Person;
+import org.scalatest._
 
-class PeopleSpec extends FlatSpec with Matchers {
+class PersonSpec extends FlatSpec with Matchers {
 
-  "A Stack" should "pop values in last-in-first-out order" in {
-    val stack = new Stack[Int]
-    stack.push(1)
-    stack.push(2)
-    stack.pop() should be (2)
-    stack.pop() should be (1)
+  "A Person" should "provide a firstName value" in {
+    val person = new Person("Harry", "Hill", "harry@hill.com")
+    person.firstName should be ("Harry")
   }
 
-  it should "throw NoSuchElementException if an empty stack is popped" in {
-    val emptyStack = new Stack[Int]
-    a [NoSuchElementException] should be thrownBy {
-      emptyStack.pop()
-    } 
+  it should "provide a lastName value" in {
+    val person = new Person("Harry", "Hill", "harry@hill.com")
+    person.lastName should be ("Hill")
   }
+
+  it should "provide a email value" in {
+    val person = new Person("Harry", "Hill", "harry@hill.com")
+    person.email should be ("harry@hill.com")
+  }
+
 }
