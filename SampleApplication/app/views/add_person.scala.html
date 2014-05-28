@@ -1,0 +1,33 @@
+@(personForm: Form[model.Person])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+
+@main("Add Person") {
+
+    @helper.form(action = routes.PersonController.submit){
+
+    <fieldset>
+        <legend> Person Details</legend>
+
+        @inputText(
+        personForm("firstName"),
+        '_label -> "First Name"
+        )
+
+        @inputText(
+        personForm("lastName"),
+        '_label -> "Last Name"
+        )
+
+        @inputText(
+        personForm("email"),
+        '_label -> "Email"
+        )
+
+    </fieldset>
+
+    }
+
+}
