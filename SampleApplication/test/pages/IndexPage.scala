@@ -33,4 +33,6 @@ trait IndexPage extends Page with Paths {
   def clickNext(implicit driver: Driver) {
     clickButtonNamed("Next")
   }
+
+
 }

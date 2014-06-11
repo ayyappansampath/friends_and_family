@@ -4,13 +4,27 @@
 @import helper.twitterBootstrap._
 
 
-@main("Add Person") {
+@main(title = Messages("add_person_page.title")) {
 
     @helper.form(action = routes.PersonController.submit){
 
     <fieldset>
-        <legend> Person Details</legend>
-
+   <!--        <div class="field-group">
+            <div class="form-field @if(personForm("firstName").hasErrors) {error}">-->
+                @if(personForm("firstName").hasErrors) {
+                    @personForm.errors("firstName").map{ error =>
+<!--
+                    <span class="error-notification">
+-->
+                        @Html(Messages("add_person_firstName.error"))
+<!--
+                    </span>
+-->
+                }
+            }
+<!--
+        </div>
+-->
         @inputText(
         personForm("firstName"),
         '_label -> "First Name"
@@ -25,6 +39,8 @@
         personForm("email"),
         '_label -> "Email"
         )
+
+        <input type="submit" value="Submit" id="submit"/>
 
     </fieldset>
 

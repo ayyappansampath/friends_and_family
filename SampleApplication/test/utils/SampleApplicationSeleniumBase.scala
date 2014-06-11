@@ -10,7 +10,7 @@ trait SampleApplicationSeleniumBase extends SeleniumBase {
   val port = 9000
   val server = s"http://$host:$port"
 
-  val landingPage = s"$server/"
+  val landingPage = s"$server"
 
   def fullyQualifiedUrl(path:String) = s"$landingPage$path"
 }

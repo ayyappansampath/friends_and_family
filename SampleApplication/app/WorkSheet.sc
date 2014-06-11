@@ -1,5 +1,11 @@
-import controllers.routes
 
- def getUrl(port : Int) = "http://localhost" + port +controllers.routes.ref.Application.loadAddPersonPage()
+class Rational(x: Int , y : Int){
+  val numerator = x
+  val denominator = y
+}
 
-getUrl(9000)
+object rationals {
+  val obj = new Rational(4,2)
+  println(obj.numerator)
+
+}
